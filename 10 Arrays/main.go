@@ -9,9 +9,21 @@ func main() {
 
 	fmt.Println(scores) // [100 80 90]
 
+	// ------------------------------------------
+
 	nums := [...]int{100, 80, 90}
 
 	fmt.Println(nums) // [100 80 90]
+
+	// ------------------------------------------
+
+	var values [3]int
+
+	values[0] = 10
+	values[1] = 20
+	values[2] = 30
+
+	fmt.Println(values)
 	fmt.Println()
 
 	// --------- Mengakses suatu nilai elemen array ---------
