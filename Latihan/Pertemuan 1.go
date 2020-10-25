@@ -1,4 +1,4 @@
-// SOLUSI DARI PEMATERI
+// SOLUSI DARI WAHID
 package main
 
 import (
