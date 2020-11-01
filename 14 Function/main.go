@@ -8,7 +8,7 @@ import (
 )
 
 // FUNGSI BIASA TANPA PARAMETER DAN TANPA NILAI KEMBALIAN
-func Cetak_Nama() {
+func Cetak_nama() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Print("Masukan nama anda : ")
@@ -19,29 +19,31 @@ func Cetak_Nama() {
 }
 
 // FUNGSI TANPA PARAMETER DENGAN NLIAI KEMBALIAN
-func Get_Tanggal() string {
-	return time.Now().Format("01-02-2006")
+func Get_tanggal() string {
+	return time.Now().Format("02-01-2006")
 }
 
 // FUNGSI BERPARAMETER TIPE DATA SAMA
-func Luas_Segitia(alas, tinggi int) float32 {
-	return float32(alas * tinggi / 2) // float32(alas) * float32(tinggi) / float32(2)
+func Luas_segitiga(alas, tinggi int) float32 {
+	luas := float32(alas * tinggi / 2)
+	return luas
 }
 
 // FUNGSI DENGAN PARAMETER BERTIPE DATA BEDA
 func body_mass_index(tinggi float32, berat_badan int) float32 {
-	return float32(berat_badan) / (tinggi * tinggi)
+	bmi := float32(berat_badan) / tinggi * tinggi
+	return bmi
 }
 
 func main() {
-	Cetak_Nama()
+	Cetak_nama()
+	Cetak_nama()
 
-	tgl_skrng := Get_Tanggal()
-	fmt.Println(tgl_skrng)
+	fmt.Println(Get_tanggal())
 
-	l_segi3 := Luas_Segitia(10, 5)
-	fmt.Println(l_segi3)
+	luas := Luas_segitiga(5, 10)
+	fmt.Println(luas)
 
-	bmi := body_mass_index(1.65, 75)
-	fmt.Println(bmi)
+	bmi_var := body_mass_index(1.65, 70)
+	fmt.Println(bmi_var)
 }
