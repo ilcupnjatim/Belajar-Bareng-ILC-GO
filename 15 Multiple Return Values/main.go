@@ -7,7 +7,7 @@ import (
 )
 
 // NILAI KEMBALIAN TANPA MENYEBUTKAN VARIABEL DI AKHIR FUNGSI
-func Get_Nama() (nama string) {
+func Get_nama() (nama string) {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Print("Masukan nama anda : ")
@@ -19,18 +19,21 @@ func Get_Nama() (nama string) {
 
 // NILAI KEMBALIAN GANDA
 func Ganda(nama string, umur int) (string, int) {
-	return nama, umur * 2
+	return nama, umur
 }
 
 func main() {
-	nama_ku := Get_Nama()
+	var umur_gue int
 
-	a, b := Ganda(nama_ku, 21)
-	fmt.Println(a)
-	fmt.Println(b)
+	fmt.Print("Masukan umur anda : ")
+	fmt.Scanln(&umur_gue)
 
-	fmt.Println()
+	nama, umur := Ganda(Get_nama(), umur_gue)
 
-	_, c := Ganda(nama_ku, 22)
-	fmt.Println(c)
+	fmt.Println(nama)
+	fmt.Println(umur)
+
+	_, umur_saya := Ganda(Get_nama(), umur_gue)
+	fmt.Println(umur_saya)
+
 }
