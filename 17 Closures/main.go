@@ -1,19 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 // Closure adalah fungsi yang bisa langsung disimpan
 // di sebuah variabel pada saat inisialisasi'nya
 
 func main() {
-
-	kali_dua := func(angka int) (hasil int) {
-		hasil = angka * 2
+	kali_dua := func(angka int) (hasil float32) {
+		hasil = float32(angka * 2)
 		return
 	}
 
-	fmt.Println(kali_dua(4) * 2)
-	fmt.Println(kali_dua(5) * 2)
+	fmt.Println(kali_dua(5))
+	fmt.Println(reflect.TypeOf(kali_dua(5)))
 
 	// Dengan menerapkan konsep tersebut, kita bisa membuat fungsi didalam fungsi,
 	// atau bahkan membuat fungsi yang mengembalikan fungsi.
@@ -30,12 +32,12 @@ func main() {
 
 	fmt.Println(beli_satu)
 
-	kubik := Pangkat_tiga(5)
+	kubik := Pangkat_empat(2)
 	fmt.Println(kubik())
 }
 
 // FUNGSI YANG MENGEMBALIKAN FUNGSI
-func Pangkat_tiga(bilangan int) func() int {
+func Pangkat_empat(bilangan int) func() int {
 	bilangan = bilangan * bilangan
 
 	return func() int {
